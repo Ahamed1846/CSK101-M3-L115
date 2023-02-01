@@ -37,8 +37,8 @@ async function fetchInfo() {
 function weatherInfo(zee) {
   console.log(zee);
   sky.innerText = zee['weather'][0]['main'];
-  weather.innerText = (zee['main']['temp'] - 273.15) | 0;
-  temprature.innerText = `${(zee['main']['temp_min'] - 273.15) | 0}/${
+  weather.innerText = `${(zee['main']['temp'] - 273.15) | 0}°c`;
+  temprature.innerText = `${(zee['main']['temp_min'] - 273.15) | 0}°c/${
     (zee['main']['temp_max'] - 273.15) | 0
-  }`;
+  }°c`;
 }
