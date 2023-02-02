@@ -8,7 +8,7 @@ let temprature = document.getElementById('temp');
 let date = document.getElementById('date');
 let weather = document.getElementById('weather');
 var locationProvided;
-var zee;
+
 btn.onclick = () => {
   locationProvided = searchBar.value;
   place.innerText = locationProvided;
