@@ -11,14 +11,6 @@ var locationProvided;
 
 btn.onclick = () => {
   locationProvided = searchBar.value;
-  place.innerText = locationProvided;
-  var today = new Date();
-  date.innerText = today.toLocaleDateString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
   fetchInfo();
 };
 async function fetchInfo() {
@@ -35,7 +27,14 @@ async function fetchInfo() {
     .then((e) => weatherInfo(e));
 }
 function weatherInfo(zee) {
-  console.log(zee);
+  place.innerText = locationProvided;
+  var today = new Date();
+  date.innerText = today.toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
   sky.innerText = zee['weather'][0]['main'];
   weather.innerText = `${(zee['main']['temp'] - 273.15) | 0}°c`;
   temprature.innerText = `${(zee['main']['temp_min'] - 273.15) | 0}°c/${
